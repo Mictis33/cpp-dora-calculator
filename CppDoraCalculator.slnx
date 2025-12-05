@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="CppDoraCalculator.vcxproj" />
+  <Project Path="CppDoraCalculator.vcxproj" Id="8410a8b3-c04a-43d6-9072-2e26e6f05ad2" />
 </Solution>

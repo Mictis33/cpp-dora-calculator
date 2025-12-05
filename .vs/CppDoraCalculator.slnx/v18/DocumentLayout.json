@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "F:\\CCode\\CppDoraCalculator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8410A8B3-C04A-43D6-9072-2E26E6F05AD2}|CppDoraCalculator.vcxproj|F:\\CCode\\CppDoraCalculator\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{8410A8B3-C04A-43D6-9072-2E26E6F05AD2}|CppDoraCalculator.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8410A8B3-C04A-43D6-9072-2E26E6F05AD2}|CppDoraCalculator.vcxproj|F:\\CCode\\CppDoraCalculator\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{8410A8B3-C04A-43D6-9072-2E26E6F05AD2}|CppDoraCalculator.vcxproj|solutionrelative:test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8410A8B3-C04A-43D6-9072-2E26E6F05AD2}|CppDoraCalculator.vcxproj|F:\\CCode\\CppDoraCalculator\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{8410A8B3-C04A-43D6-9072-2E26E6F05AD2}|CppDoraCalculator.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,30 +18,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "test.cpp",
               "DocumentMoniker": "F:\\CCode\\CppDoraCalculator\\test.cpp",
               "RelativeDocumentMoniker": "test.cpp",
               "ToolTip": "F:\\CCode\\CppDoraCalculator\\test.cpp",
               "RelativeToolTip": "test.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-12-05T11:49:18.27Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "main.cpp",
               "DocumentMoniker": "F:\\CCode\\CppDoraCalculator\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "F:\\CCode\\CppDoraCalculator\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-12-05T11:45:36.291Z",
               "EditorCaption": ""

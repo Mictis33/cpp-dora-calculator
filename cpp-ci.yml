@@ -1,48 +1,24 @@
-# C++项目CI流水线配置（编译+单元测试）
-name: C++ CI/CD Pipeline
-
-# 触发条件：代码Push到main分支，或提交Pull Request到main分支时触发
+name: C++ CI
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-# 任务集合
 jobs:
-  build-and-test:
-    # 运行环境：Ubuntu最新版（22.04 LTS）
-    runs-on: ubuntu-latest
-    
-    # 任务步骤
+  build:
+    runs-on: ubuntu-22.04
     steps:
-      # 步骤1：拉取代码到运行环境
-      - name: Checkout code
-        uses: actions/checkout@v4  # 使用最新版checkout动作
-        
-      # 步骤2：安装编译依赖和Google Test框架（手动编译源码，避免系统源版本问题）
-      - name: Install dependencies
+      - uses: actions/checkout@v4
+      - name: Install deps
         run: |
-          sudo apt-get update -y && sudo apt-get upgrade -y  # 更新系统包
-          sudo apt-get install -y g++ cmake git  # 安装基础编译工具
-          # 克隆Google Test源码（指定1.14.0版本，稳定版）
-          git clone --depth 1 --branch v1.14.0 https://github.com/google/googletest.git /tmp/googletest
-          cd /tmp/googletest
-          mkdir build && cd build
-          # 编译Google Test（指定C++14标准，与项目兼容）
-          cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_CXX_STANDARD=14
-          make -j$(nproc)  # 多核编译，加快速度
-          sudo make install  # 安装到系统目录
-        
-      # 步骤3：编译C++项目（指定C++17标准，兼容C++14及以上，扩展性更好）
-      - name: Build project
+          sudo apt update
+          sudo apt install -y g++-11 cmake libgtest-dev
+          sudo update-alternatives --set g++ /usr/bin/g++-11
+          # 手动编译GTest（解决系统源版本问题）
+          cd /usr/src/gtest
+          sudo cmake . -DCMAKE_CXX_STANDARD=17
+          sudo make
+          sudo cp lib/*.a /usr/lib/
+      - name: Compile & Test
         run: |
-          g++ -std=c++17 main.cpp test.cpp -o test \
-          -lgtest -lgtest_main -pthread \
-          -L/usr/local/lib -I/usr/local/include  # 指定库和头文件路径
-        
-      # 步骤4：运行单元测试（执行编译后的测试程序）
-      - name: Run unit tests
-        run: |
-          chmod +x ./test  # 确保测试程序可执行
-          ./test  # 运行测试
+          # 明确指定C++17标准（核心！）
+          g++ -std=c++17 main.cpp test.cpp -o test -lgtest -lgtest_main -pthread
+          ./test
