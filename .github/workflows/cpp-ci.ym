@@ -1,0 +1,24 @@
+name: C++ CI
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:  # 允许手动触发
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: |
+          sudo apt update -y
+          sudo apt install -y g++-11 cmake libgtest-dev
+          sudo update-alternatives --set g++ /usr/bin/g++-11
+          # 编译GTest
+          cd /usr/src/gtest
+          sudo cmake . -DCMAKE_CXX_STANDARD=17
+          sudo make -j$(nproc)
+          sudo cp lib/*.a /usr/lib/
+      - name: Compile and test
+        run: |
+          g++ -std=c++17 main.cpp test.cpp -o test -lgtest -lgtest_main -pthread
+          ./test
